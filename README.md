@@ -6,7 +6,7 @@ Simple FUSE service in charge of counting NGINX response codes for a realtime, s
 
 #### 1. Why?
 
-Because I can, and because nginx metrics without parsing the access.log are only available in NGINX Plus. This will give you real time minute by minute metrics for your nginx instance in a nice parseable format. 
+Because it's fun, and because nginx metrics without parsing the access.log are only available in NGINX Plus. This will give you real time minute by minute metrics for your nginx instance in a nice parseable format. 
 
 
 #### 2. How it works?
