@@ -1,0 +1,13 @@
+[package]
+name = "nginx-metrics-fs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.31"
+clap = "4.4.7"
+fuser = { version = "0.14", features = ["abi-7-26"] }
+libc = "0.2.150"
+regex = "1.10.2"
