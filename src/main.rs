@@ -75,7 +75,7 @@ fn cli_command() -> Command {
         .arg(
             Arg::new("time-points")
                 .short('t')
-                .long("time-points ")
+                .long("time-points")
                 .action(ArgAction::Set)
                 .default_value("10")
                 .help("How many minutes of stats should be stored")
