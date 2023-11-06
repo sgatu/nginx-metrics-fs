@@ -70,7 +70,8 @@ By default the file names are "stats" and "pretty_stats", but this can be change
 - Add some testing
 
 #### 5. Building and running
-Building requires rust development tools installed. Checkup rustup. 
+Building requires rust development tools installed. Checkup rustup.
+
 It also requires fuse and pkg dev packages
 * Install build required packages
     > **Debian/Ubuntu**
