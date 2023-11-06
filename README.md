@@ -14,8 +14,8 @@ Because I can, and because nginx metrics without parsing the access.log are only
 This application creates a virtual filesystem using FUSE with a special file that replaces (or work in parallel) the nginx access.log file and where each new access line written to that file will be parsed and counted by minute. The amount of minutes stores is 10 by default, but can be configured using the **--time-points** parameter.
 
 In your nginx configuration all you have to do is to add a new access_log entry in your **server** block and then restart your nginx service.
-
-```nginx.conf
+> **nginx.conf or site.conf**
+```
 server {
     ...
     access_log /your/mount/path/stats
@@ -69,6 +69,28 @@ By default the file names are "stats" and "pretty_stats", but this can be change
 - Maybe add filters, maybe be able to filter by endpoint, but maybe can be done with nginx if= argument too.
 - Add some testing
 
-
-#### 5. Contributing
+#### 5. Building and running
+Building requires rust development tools installed. Checkup rustup. 
+It also requires fuse and pkg dev packages
+* Install build required packages
+    > **Debian/Ubuntu**
+    ```
+    sudo apt-get install libfuse-dev pkg-config
+    ```
+* Then execute the build command
+    ```
+    cargo build --release
+    ```
+    You will find the executable file under _**target/release**_ called **nginx-metrics-fs**
+    &nbsp;
+* Install running requirements
+    > **Debian/Ubuntu**
+    ```
+    sudo apt-get install fuse3
+    ```
+* Run it (you might want it running as service and starting before nginx starts)
+    ```
+    nginx-metrics-fs -m /your/path
+    ```
+#### 6. Contributing
 Just fork and PR. Contributions are welcome, whether they are bug fixes, improvements to the code, or new features.
